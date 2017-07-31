@@ -1,6 +1,6 @@
 Package: data360r
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R Wrapper for tcdata360.worldbank.org
 Version: 0.0.0.9000
 Author: Ma. Regina Paz S. Onglao <monglao@ifc.org>
 Maintainer: Ma. Regina Paz S. Onglao <monglao@ifc.org>
