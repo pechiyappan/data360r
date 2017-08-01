@@ -26,7 +26,7 @@
 #' @param output_type string pertaining to the output type. Possible choices include:
 #'      'wide' == one row contains multi-year observations
 #'      'long' == one row refers to one year only.
-#'
+#' @export
 #' @return Data frame containing requested data
 #' @examples
 #' #get data for dataset ID 51 in TCdata360
@@ -40,7 +40,7 @@
 #'
 #' #get data for indicator IDs 944, 972 in 2011-2013 in long format in TCdata360
 #' df4 <- get_data360(indicator_id = c(944, 972),
-#' timeframes = c(2011, 2012, 2013), output_type = 'long')
+#'                    timeframes = c(2011, 2012, 2013), output_type = 'long')
 
 get_data360 <- function(site = "tc", indicator_id = NULL, dataset_id = NULL, country_iso3 = NULL, timeframes = NULL, output_type = "wide") {
 

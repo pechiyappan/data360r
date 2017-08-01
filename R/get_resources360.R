@@ -19,7 +19,7 @@
 #'                however after this the response will be cached.
 #'     'toolkits' == Find WBG toolkits related to certain topics and subtopics.
 #'     'nav' == List root categories in navigational hierarchy.
-#'
+#' @export
 #' @return Data frame (wide) containing requested resource information
 #' @examples
 #' #get all root-level categories in TCdata360

@@ -17,7 +17,7 @@
 #'     Possible choices: 'countries' == Lists metadata for all countries and regions.
 #'     'indicators' == Lists metadata for all indicators. Does not return actual data.
 #'     'datasets' == Lists metadata for all datasets.
-#'
+#' @export
 #' @return Data frame (wide) containing requested metadata
 #' @examples
 #' #get all indicator metadata in Govdata360

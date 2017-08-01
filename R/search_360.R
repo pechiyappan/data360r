@@ -19,6 +19,7 @@
 #'     Leaving this NULL will return all possible search results.
 #' @param limit_results NULL (optional). Number pertaining to the number of top results to be kept.
 #'
+#' @export
 #' @return List containing top search results
 #' @examples
 #' #search a country's code in TCdata360
