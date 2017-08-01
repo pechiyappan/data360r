@@ -25,13 +25,13 @@
 #' search_360('Philippines', search_type = 'country')
 #'
 #' #search for top 10 relevant indicator codes in TCdata360
-#' search_360('GDP', search_type = 'indicator', limit=10)
+#' search_360('GDP', search_type = 'indicator', limit_results = 10)
 #'
 #' #search for top 10 indicators of a database in TCdata360
-#' search_360('World Development Indicators', search_type = 'indicator', limit=10)
+#' search_360('World Development Indicators', search_type = 'indicator', limit_results = 10)
 #'
 #' #search for top 10 indicators of a data provider in TCdata360
-#' search_360('WEF', search_type = 'indicator', limit=10)
+#' search_360('WEF', search_type = 'indicator', limit_results = 10)
 #'
 #' #search for top 10 relevant categories in Govdata360
 #' search_360('Governance', site='gov', search_type = 'category', limit_results = 10)
