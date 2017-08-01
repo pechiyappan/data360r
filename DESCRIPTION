@@ -1,6 +1,6 @@
 Package: data360r
 Type: Package
-Title: R Wrapper for tcdata360.worldbank.org
+Title: R Wrapper for TC/Govdata360
 Version: 1.0.0
 Author: Authors@R: c(
     person("Ma. Regina Paz", "Onglao", email = "monglao@ifc.org", role = ["cre", "aut"]),
