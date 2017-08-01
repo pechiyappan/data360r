@@ -13,7 +13,8 @@ This version of the package supports the following functionalities. For more inf
 
 ## get_data360: Download TC/Govdata360 data by country, indicator, dataset, timeframe, or a combination of these
 This function downloads the requested data by using the TC/Govdata360 API and transforms it into a dataframe.
-Output: data frame (wide or long, depending on user input) containing requested data.
+
+**Output:** data frame (wide or long, depending on user input) containing requested data.
 
 Some examples of its usage:
 ```
@@ -36,7 +37,8 @@ This function downloads the requested TC/Govdata360 metadata, such as:
   - `'countries'` == Lists metadata for all countries and regions.
   - `'indicators'` == Lists metadata for all indicators. Does not return actual data.
   - `'datasets'` == Lists metadata for all datasets.
-Output: wide  dataframe containing requested metadata.
+
+**Output:** wide  dataframe containing requested metadata.
 
 Some examples of its usage:
 ```
@@ -52,7 +54,8 @@ df_datasets <- get_metadata360(metadata_type = 'datasets')
 
 ## search_360: Search TC/Govdata360 indicators, countries, categories, and dataset lists
 Don't know what codes to write as inputs for the above two functions? This helpful function searches TC/Govdata360 indicators, countries, categories, and dataset lists based on a user-inputted search query.
-Output: dataframe containing top search results
+
+**Output:** dataframe containing top search results
 
 Some examples of its usage:
 ```
@@ -77,7 +80,8 @@ This function downloads the requested TC/Govdata360 resource information such as
   - `'related'` == Find WBG content related to certain topics and countries. Note that this endpoint calls a number of external API so may take around 10s to return on the initial call, however after this the response will be cached.
   - `'toolkits'` == Find WBG toolkits related to certain topics and subtopics.
   - `'nav'` == List root categories in navigational hierarchy.
-Output: wide  dataframe containing requested resource information.
+
+**Output:** wide dataframe containing requested resource information.
 
 Some examples of its usage:
 ```
