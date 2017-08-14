@@ -18,7 +18,7 @@
 #'     Possible values include: 'indicator', 'category', 'country'
 #'     Leaving this NULL will return all possible search results.
 #' @param limit_results NULL (optional). Number pertaining to the number of top results to be kept.
-#'
+#' @import data.table
 #' @export
 #' @return List containing top search results
 #' @examples
@@ -47,6 +47,11 @@ search_360 <- function(search_string = "World Bank", site = "tc", search_type = 
         # catch errors
         stop("site parameter should only be either 'tc' or 'gov'. Please try again.")
     }
+    tc_ind <- jsonlite::fromJSON('http://tcdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
+    gov_ind <- jsonlite::fromJSON('http://govdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
+    df_ind <- rbind(tc_ind, gov_ind)
+    df_ind <- data.table::setDT(df_ind, key="name")
+    df_ind <- unique(df_ind)
 
     query <- utils::URLencode(tolower(search_string))
     dl_url <- paste(api_base, query, sep = "")
@@ -68,5 +73,9 @@ search_360 <- function(search_string = "World Bank", site = "tc", search_type = 
         df <- utils::head(df, limit_results)
     }
 
-    return(df)
+    names(df)[names(df) == "id"] <- "slug"
+    df<-data.table::setDT(df, key="name")
+    df_final<-df_ind[df]
+
+    return(df_final)
 }
