@@ -1,11 +1,11 @@
-# data360r
+# WBdata360R
 This R package makes it easy to engage with the API of from the TCdata360 and Govdata360 platforms at tcdata360.worldbank.org and govdata360.worldbank.org, respectively. Functionalities include easier download of datasets, metadata, and related information, as well as searching based on user-inputted query.
 
 # Installation
 This package can be easily installed by typing this in the `R` console:
 ```
 install.packages("devtools")
-devtools::install_github("mrpsonglao/data360r")
+devtools::install_github("mrpsonglao/WBdata360R")
 ```
 
 # Usage and Examples
