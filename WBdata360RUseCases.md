@@ -1,9 +1,8 @@
 # Diving in WBdata360R: Package Use Cases in just 3+ lines of R code
 This section covers the following use cases, which caters to R users ranging from the beginner to advanced levels:
--	Preparation: Easy Package Installation
--	Use Case #1: Downloading relevant indicator data for a specific country
--	Use Case #2: Comparing and visualizing indicators with ggplot2
--	Use Case #3: Running regression on the WEF Global Competitiveness Index dataset
+- Use Case 1: Downloading relevant indicator data for a specific country
+- Use Case 2: Comparing and visualizing indicators with ggplot2
+- Use Case 3: Running regression on the WEF Global Competitiveness Index dataset
 
 Look out for friendly tips when using the WBdata360R package, which can be found in specially-formatted boxes such as this one:
 >	TIP: If you want to see more use cases that aren’t covered here or provide feedback on the WBdata360R package, feel free to drop us a message at tcdata360@worldbank.org!
