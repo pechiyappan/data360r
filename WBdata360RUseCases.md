@@ -41,7 +41,7 @@ For better search results, try to keep the search string query specific but conc
 > write.csv(df_usecase1_result, ‘df_usecase1_result.csv')
 ```
 Here’s the output using Excel:
-[image here]
+![Excel Output](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-1.png)
 
 ## Use Case #2: Comparing and visualizing indicators with ggplot2
 For intermediate R users who are comfortable with using R for data visualization, dataframes usually need to be in a long format especially when used with the ggplot2 R package. So how do we use WBdata360R together with ggplot2?
@@ -74,6 +74,10 @@ For example, to remove duplicates you can run:
 > ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator,fill=Indicator))
 + geom_histogram(binwidth=.75, alpha=.25, position="identity")
 ```
+
+Here's how the plot looks like:
+![Simple ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-2.png)
+
 **Step 4 [Optional].** Generate a more advanced ggplot2 plot with `WBdata360r`. To show its versatility, let’s generate a more complex plot with WBdata360r. First, we query the indicator data using `getdata_360` and merge this with the countries’ region metadata using `get_metadata360`. We remove countries under the region `“NAC”` for simplicity.
 ```r
 > df_usecase2_result <- get_data360(indicator_id = c(204, 205), output_type = 'long')
@@ -89,6 +93,9 @@ We then use `facet_wrap` to generate multiple kernel density estimator (KDE) plo
 + scale_fill_manual(name="Gender",values=c("blue","red"), labels=c("boys","girls"))
 + ggtitle("Country-level Density of Legal Age for Marriage, by gender and region (WBL 2016)")
 ```
+
+Here's how the resulting plot looks like:
+![Advanced ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-3.png)
  
 ## Use Case #3: Running regression on the WEF Global Competitiveness Index dataset
 What if we want to focus on a single dataset and conduct a quick regression analysis on this?
@@ -110,6 +117,10 @@ What if we want to focus on a single dataset and conduct a quick regression anal
 ```r
 > qplot(df3$"Innovation", df3$"Technological Readiness", data = df3)
 ```
+
+Here's how the scatterplot looks like:
+![Scatterplot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-4.png)
+
 The scatterplot suggests that Innovation increases quadratically with Technological Readiness. Let’s fit a quadratic regression model to these data points. Based on the summary results, the model is a good fit. We also generate the supplementary model plots to see if the results make sense.
 ```r
 > mod_ mod_usecase3_quad <- lm(df3$"Innovation" ~ poly(df3$"Technological Readiness", 2))
@@ -138,3 +149,5 @@ F-statistic:   181 on 2 and 134 DF,  p-value: < 2.2e-16
 > par(mfrow = c(2, 2))
 > plot(mod_usecase3_quad)
 ```
+Here's how the resulting plots looks like:
+![Regression supporting plots](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-5.png)
