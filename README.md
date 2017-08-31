@@ -8,6 +8,15 @@ install.packages("devtools")
 devtools::install_github("mrpsonglao/WBdata360R")
 ```
 
+For users who are installing this package in their office work stations which use a corporate proxy or network (e.g., World Bank users), please use the following installation code instead:
+```
+install.packages("devtools","httr","curl")
+library(httr)
+library(curl)
+httr::set_config( config( ssl_verifypeer = 0L ) )
+devtools::install_github("mrpsonglao/WBdata360R")
+```
+
 # Usage and Examples
 This version of the package supports the following functionalities. For more information, use the built-in `help()` function and `?` help operator in `R` to access the detailed documentation pages for each function.
 
