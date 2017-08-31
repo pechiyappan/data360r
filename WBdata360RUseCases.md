@@ -77,7 +77,7 @@ Here's how the plot looks like:
 %>% filter(!(region == "NAC"))
 ```
 We then use `facet_wrap` to generate multiple kernel density estimator (KDE) plots comparing the two indicators, by geographic region.
-```
+```r
 > ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator, fill=Indicator))
 + geom_density(alpha=.5)
 + facet_wrap(~region)
