@@ -3,13 +3,13 @@ This R package makes it easy to engage with the API of from the TCdata360 and Go
 
 # Installation
 This package can be easily installed by typing this in the `R` console:
-```
+```r
 install.packages("devtools")
 devtools::install_github("mrpsonglao/WBdata360R")
 ```
 
 For users who are installing this package in their office work stations which use a corporate proxy or network (e.g., World Bank users), please use the following installation code instead:
-```
+```r
 install.packages("devtools","httr","curl")
 library(httr)
 library(curl)
@@ -28,7 +28,7 @@ This function downloads the requested data by using the TC/Govdata360 API and tr
 **Output:** data frame (wide or long, depending on user input) containing requested data.
 
 Some examples of its usage:
-```
+```r
 #get data for dataset ID 51 in TCdata360
 df <- get_data360(dataset_id = 51)
 
@@ -52,7 +52,7 @@ This function downloads the requested TC/Govdata360 metadata, such as:
 **Output:** wide  dataframe containing requested metadata.
 
 Some examples of its usage:
-```
+```r
 #get all indicator metadata in Govdata360
 df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")
 
@@ -69,7 +69,7 @@ Don't know what codes to write as inputs for the above two functions? This helpf
 **Output:** dataframe containing top search results
 
 Some examples of its usage:
-```
+```r
 #search a country's code in TCdata360
 search_360('Philippines', search_type = 'country')
 
@@ -95,7 +95,7 @@ This function downloads the requested TC/Govdata360 resource information such as
 **Output:** wide dataframe containing requested resource information.
 
 Some examples of its usage:
-```
+```r
 #get all indicator metadata in Govdata360
 df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")
 
