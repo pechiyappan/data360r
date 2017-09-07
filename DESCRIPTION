@@ -1,4 +1,4 @@
-Package: WBdata360R
+Package: data360r
 Type: Package
 Title: R Wrapper for TC/Govdata360
 Version: 1.0.1
