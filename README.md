@@ -1,11 +1,11 @@
-# WBdata360R
+# data360r
 This R package makes it easy to engage with the API of from the TCdata360 and Govdata360 platforms at tcdata360.worldbank.org and govdata360.worldbank.org, respectively. Functionalities include easier download of datasets, metadata, and related information, as well as searching based on user-inputted query.
 
 # Installation
 This package can be easily installed by typing this in the `R` console:
 ```r
 install.packages("devtools")
-devtools::install_github("mrpsonglao/WBdata360R")
+devtools::install_github("mrpsonglao/data360r")
 ```
 
 For users who are installing this package in their office work stations which use a corporate proxy or network (e.g., World Bank users), please use the following installation code instead:
@@ -14,13 +14,13 @@ install.packages("devtools","httr","curl")
 library(httr)
 library(curl)
 httr::set_config( config( ssl_verifypeer = 0L ) )
-devtools::install_github("mrpsonglao/WBdata360R")
+devtools::install_github("mrpsonglao/data360r")
 ```
 
 # Usage and Examples
 This version of the package supports the following functionalities. For more information, use the built-in `help()` function and `?` help operator in `R` to access the detailed documentation pages for each function.
 
-> PRO TIP: Interested to see more advanced use cases? Take a look at https://github.com/mrpsonglao/WBdata360R/blob/master/WBdata360RUseCases.md
+> PRO TIP: Interested to see more advanced use cases? Take a look at https://github.com/mrpsonglao/data360r/blob/master/data360rUseCases.md
 
 ## get_data360: Download TC/Govdata360 data by country, indicator, dataset, timeframe, or a combination of these
 This function downloads the requested data by using the TC/Govdata360 API and transforms it into a dataframe.
