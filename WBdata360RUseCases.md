@@ -1,11 +1,11 @@
-# Diving in WBdata360R: Package Use Cases in just 3+ lines of R code
+# Diving in data360r: Package Use Cases in just 3+ lines of R code
 This section covers the following use cases, which caters to R users ranging from the beginner to advanced levels:
 - Use Case 1: Downloading relevant indicator data for a specific country
 - Use Case 2: Comparing and visualizing indicators with ggplot2
 - Use Case 3: Running regression on the WEF Global Competitiveness Index dataset
 
-Look out for friendly tips when using the WBdata360R package, which can be found in specially-formatted boxes such as this one:
-> TIP: If you want to see more use cases that aren’t covered here or provide feedback on the WBdata360R package, feel free to drop us a message at tcdata360@worldbank.org!
+Look out for friendly tips when using the data360r package, which can be found in specially-formatted boxes such as this one:
+> TIP: If you want to see more use cases that aren’t covered here or provide feedback on the data360r package, feel free to drop us a message at tcdata360@worldbank.org!
 
 ## Use Case #1: Downloading relevant indicator data for a specific country
 For most users, it’s important to quickly find and download data you need for a report. For example, what if we need to download data related to “woman business” for the United States?
@@ -32,16 +32,16 @@ df_usecase1 <- search_360("woman business", search_type="indicator", limit_resul
 ```r
 > df_usecase1_result <- get_data360(indicator_id=df_usecase1$id, country_iso3="USA")
 ```
-**[Optional] Step 4. Export R dataframe as CSV.** What if we want to export the dataframe so that we can use it in Excel? We can use the `write.csv` function (via `utils` package, which the `WBdata360R` package already installs for you) to do this.
+**[Optional] Step 4. Export R dataframe as CSV.** What if we want to export the dataframe so that we can use it in Excel? We can use the `write.csv` function (via `utils` package, which the `data360r` package already installs for you) to do this.
 
 ```r
 > write.csv(df_usecase1_result, ‘df_usecase1_result.csv')
 ```
 Here’s the output using Excel:
-![Excel Output](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-1.png)
+![Excel Output](https://raw.githubusercontent.com/mrpsonglao/data360r/master/images/figure-1.png)
 
 ## Use Case #2: Comparing and visualizing indicators with `ggplot2`
-For intermediate `R` users who are comfortable with using R for data visualization, dataframes usually need to be in a long format especially when used with the `ggplot2` `R` package. So how do we use WBdata360R together with `ggplot2`?
+For intermediate `R` users who are comfortable with using R for data visualization, dataframes usually need to be in a long format especially when used with the `ggplot2` `R` package. So how do we use data360r together with `ggplot2`?
 
 **Step 1. Search IDs of indicators for comparison.** For this example, let’s get the indicator IDs for the “What is the legal age of marriage for boys and for girls?” indicators. We note that these are indicator IDs `204` and `205`, respectively.
 ```r
@@ -51,7 +51,7 @@ For intermediate `R` users who are comfortable with using R for data visualizati
 1	204	What is the legal age of marriage for boys?	age.marr.male	indicator	0.1111111	Women, Business and the Law	FALSE
 2	205	What is the legal age of marriage for girls?	age.marr.fem	indicator	0.1111111	Women, Business and the Law	FALSE
 ```
-> TIP: `WBdata360r` package functions are compatible with the tidyverse R package, so you can use these with together with “pipes” `%>%`. For example, to remove duplicates you can run: `search_360("men", search_type="indicator") %>% distinct(name,.keep_all=TRUE)`
+> TIP: `data360r` package functions are compatible with the tidyverse R package, so you can use these with together with “pipes” `%>%`. For example, to remove duplicates you can run: `search_360("men", search_type="indicator") %>% distinct(name,.keep_all=TRUE)`
 
 **Step 2. Get indicator data for all countries for year 2016.** How do we get the indicator data in long format using `get_data360`? Simply add the parameter `output_type="long"` in the function call, and voila! For simplicity, we limit the indicator data to year 2016 only by adding the parameter `timeframes = c(2016)`.
 
@@ -59,7 +59,7 @@ For intermediate `R` users who are comfortable with using R for data visualizati
 > df_usecase2_result <- get_data360(indicator_id = c(204, 205), timeframes = c(2016), output_type = 'long')
 ```
 
-> TIP: The default output_type for `getdata_360` is a wide dataframe. For `getdata_360` outputs with `output_type = ‘long’`, the column for the timeframes is always called `“Period”` whereas the column for the indicator values is always called `“Observation”`. Knowing this is helpful especially when making reusable code snippets with `WBdata360R` functions.
+> TIP: The default output_type for `getdata_360` is a wide dataframe. For `getdata_360` outputs with `output_type = ‘long’`, the column for the timeframes is always called `“Period”` whereas the column for the indicator values is always called `“Observation”`. Knowing this is helpful especially when making reusable code snippets with `data360r` functions.
 
 **Step 3. Plot indicator data using `ggplot2`.** Since the resulting dataframe from `get_data360` is in a long dataframe format, it’s fairly straightforward to generate plots using these. For example, let’s generate overlapping histograms to quickly compare the two indicators.
 ```r
@@ -68,9 +68,9 @@ For intermediate `R` users who are comfortable with using R for data visualizati
 ```
 
 Here's how the plot looks like:
-![Simple ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-2.png)
+![Simple ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/data360r/master/images/figure-2.png)
 
-**Step 4 [Optional]. Generate a more advanced `ggplot2` plot with `WBdata360r`.** To show its versatility, let’s generate a more complex plot with `WBdata360r`. First, we query the indicator data using `getdata_360` and merge this with the countries’ region metadata using `get_metadata360`. We remove countries under the region `“NAC”` for simplicity.
+**Step 4 [Optional]. Generate a more advanced `ggplot2` plot with `data360r`.** To show its versatility, let’s generate a more complex plot with `data360r`. First, we query the indicator data using `getdata_360` and merge this with the countries’ region metadata using `get_metadata360`. We remove countries under the region `“NAC”` for simplicity.
 ```r
 > df_usecase2_result <- get_data360(indicator_id = c(204, 205), output_type = 'long')
 %>% merge(select(get_metadata360(),iso3,region), by.x="Country ISO3", by.y="iso3")
@@ -87,7 +87,7 @@ We then use `facet_wrap` to generate multiple kernel density estimator (KDE) plo
 ```
 
 Here's how the resulting plot looks like:
-![Advanced ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-3.png)
+![Advanced ggplot2 plot](https://raw.githubusercontent.com/mrpsonglao/data360r/master/images/figure-3.png)
  
 ## Use Case #3: Running regression on the WEF Global Competitiveness Index dataset
 What if we want to focus on a single dataset and conduct a quick regression analysis on this?
@@ -111,7 +111,7 @@ What if we want to focus on a single dataset and conduct a quick regression anal
 ```
 
 Here's how the scatterplot looks like:
-![Scatterplot](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-4.png)
+![Scatterplot](https://raw.githubusercontent.com/mrpsonglao/data360r/master/images/figure-4.png)
 
 The scatterplot suggests that Innovation increases quadratically with Technological Readiness. Let’s fit a quadratic regression model to these data points. Based on the summary results, the model is a good fit. We also generate the supplementary model plots to see if the results make sense.
 ```r
@@ -142,4 +142,4 @@ F-statistic:   181 on 2 and 134 DF,  p-value: < 2.2e-16
 > plot(mod_usecase3_quad)
 ```
 Here's how the resulting plots looks like:
-![Regression supporting plots](https://raw.githubusercontent.com/mrpsonglao/WBdata360R/master/images/figure-5.png)
+![Regression supporting plots](https://raw.githubusercontent.com/mrpsonglao/data360r/master/images/figure-5.png)
