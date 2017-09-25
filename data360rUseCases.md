@@ -63,8 +63,9 @@ For intermediate `R` users who are comfortable with using R for data visualizati
 
 **Step 3. Plot indicator data using `ggplot2`.** Since the resulting dataframe from `get_data360` is in a long dataframe format, it’s fairly straightforward to generate plots using these. For example, let’s generate overlapping histograms to quickly compare the two indicators.
 ```r
-> ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator,fill=Indicator))
-+ geom_histogram(binwidth=.75, alpha=.25, position="identity")
+> library(ggplot2)
+> ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator,fill=Indicator)) +
+geom_histogram(binwidth=.75, alpha=.25, position="identity")
 ```
 
 Here's how the plot looks like:
@@ -72,18 +73,19 @@ Here's how the plot looks like:
 
 **Step 4 [Optional]. Generate a more advanced `ggplot2` plot with `data360r`.** To show its versatility, let’s generate a more complex plot with `data360r`. First, we query the indicator data using `getdata_360` and merge this with the countries’ region metadata using `get_metadata360`. We remove countries under the region `“NAC”` for simplicity.
 ```r
+> library(tidyverse)
 > df_usecase2_result <- get_data360(indicator_id = c(204, 205), output_type = 'long')
 %>% merge(select(get_metadata360(),iso3,region), by.x="Country ISO3", by.y="iso3")
 %>% filter(!(region == "NAC"))
 ```
 We then use `facet_wrap` to generate multiple kernel density estimator (KDE) plots comparing the two indicators, by geographic region.
 ```r
-> ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator, fill=Indicator))
-+ geom_density(alpha=.5)
-+ facet_wrap(~region)
-+ theme(legend.position="right")
-+ scale_fill_manual(name="Gender",values=c("blue","red"), labels=c("boys","girls"))
-+ ggtitle("Country-level Density of Legal Age for Marriage, by gender and region (WBL 2016)")
+> ggplot(df_usecase2_result, aes(x=Observation, cond=Indicator, fill=Indicator)) +
+geom_density(alpha=.5) +
+facet_wrap(~region) +
+theme(legend.position="right") +
+scale_fill_manual(name="Gender",values=c("blue","red"), labels=c("boys","girls")) +
+ggtitle("Country-level Density of Legal Age for Marriage, by gender and region (WBL 2016)")
 ```
 
 Here's how the resulting plot looks like:
@@ -98,11 +100,12 @@ What if we want to focus on a single dataset and conduct a quick regression anal
 ```
 **Step 2. Get the indicator data for WEF GCI 2016-2017.** For simplicity, we get all WEF GCI data from the timeframe 2016-2017 in a long dataframe format.
 ```r
-> df_usecase3_result <- get_data360(dataset_id=c(53), timeframes=c('2016-2017'), output_type = 'long')
+> library(tidyverse)
+> df_usecase3_result <- get_data360(dataset_id=c(53), output_type = 'long') %>% filter(Period==c("2016-2017"))
 ```
 **Step 3.a. Preprocessing WEF GCI data for linear regression.** For simplicity, we only keep all WEF GCI indicators with `Subindicator type == ‘Value’`. We then reshape the resulting dataframe such that the indicators are the column names using `reshape::acast`. This makes it easier to fit the indicator data to regression models.
 ```r
-> df2 <- df_usecase3_result[df_usecase3_result$"Subindicator Type" == "Value"]
+> df2 <- filter(df_usecase3_result, df_usecase3_result$"Subindicator Type" == "Value", !is.na(Observation))
 > df3 <- as.data.frame(reshape2::acast(df2, df2$"Country ISO3" ~ df2$Indicator, value.var="Observation"))
 ```
 **Step 3.b. Regression on “Innovation” and “Technological Readiness” indicators.** Since the dataframe has been preprocessed appropriately, it’s straightforward to implement regression on WEF GCI 2016-2017 indicators. Before fitting the data to a regression model, let’s first generate a scatterplot for selected WEF GCI indicators. For simplicity, let’s focus on the “Innovation” and “Technological Readiness” indicators.
@@ -115,7 +118,7 @@ Here's how the scatterplot looks like:
 
 The scatterplot suggests that Innovation increases quadratically with Technological Readiness. Let’s fit a quadratic regression model to these data points. Based on the summary results, the model is a good fit. We also generate the supplementary model plots to see if the results make sense.
 ```r
-> mod_ mod_usecase3_quad <- lm(df3$"Innovation" ~ poly(df3$"Technological Readiness", 2))
+> mod_usecase3_quad <- lm(df3$"Innovation" ~ poly(df3$"Technological Readiness", 2))
 > summary(mod_usecase3_quad)
 
 Call:
