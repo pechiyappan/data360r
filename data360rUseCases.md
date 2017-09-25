@@ -74,9 +74,9 @@ Here's how the plot looks like:
 **Step 4 [Optional]. Generate a more advanced `ggplot2` plot with `data360r`.** To show its versatility, let’s generate a more complex plot with `data360r`. First, we query the indicator data using `getdata_360` and merge this with the countries’ region metadata using `get_metadata360`. We remove countries under the region `“NAC”` for simplicity.
 ```r
 > library(tidyverse)
-> df_usecase2_result <- get_data360(indicator_id = c(204, 205), output_type = 'long')
-%>% merge(select(get_metadata360(),iso3,region), by.x="Country ISO3", by.y="iso3")
-%>% filter(!(region == "NAC"))
+> df_usecase2_result <- get_data360(indicator_id = c(204, 205), output_type = 'long') %>%
+	merge(select(get_metadata360(),iso3,region), by.x="Country ISO3", by.y="iso3") %>%
+	filter(!(region == "NAC"))
 ```
 We then use `facet_wrap` to generate multiple kernel density estimator (KDE) plots comparing the two indicators, by geographic region.
 ```r
