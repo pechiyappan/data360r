@@ -3,3 +3,4 @@
 ^images$
 ^data360rUseCases\.md$
 ^\.travis\.yml$
+^cran-comments\.md$
