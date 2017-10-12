@@ -19,4 +19,6 @@ Possibly mis-spelled words in DESCRIPTION:
   TCdata (11:52)
   metadata (13:53)
 
-  These are the proper spelling of the terms used above.
+  
+This is my first submission.
+These are the proper spellings of the terms used above.
