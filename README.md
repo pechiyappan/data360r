@@ -107,5 +107,3 @@ df_countries <- get_metadata360(metadata_type = 'countries')
 #get all dataset metadata in TCdata360
 df_datasets <- get_metadata360(metadata_type = 'datasets')
 ```
-
-[![Travis-CI Build Status](https://travis-ci.org/mrpsonglao/data360r/.svg?branch=master)](https://travis-ci.org/mrpsonglao/data360r/)
