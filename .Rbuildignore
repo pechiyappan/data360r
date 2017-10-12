@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^images$
+^data360rUseCases\.md$
+^\.travis\.yml$
