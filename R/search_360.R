@@ -76,7 +76,7 @@ search_360 <- function(search_string = "World Bank", site = "tc", search_type = 
     names(df)[names(df) == "id"] <- "slug"
     df<-data.table::setDT(df, key="name")
     df<-df_ind[df]
-    df<-df[order(df$score, descending=TRUE)]
+    df<-df[order(-df$score)]
 
     return(df)
 }
