@@ -21,13 +21,13 @@
 #' @return Data frame (wide) containing requested metadata
 #' @examples
 #' #get all indicator metadata in Govdata360
-#' df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")
+#' #df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")
 #'
 #' #get all country metadata in TCdata360
 #' df_countries <- get_metadata360(metadata_type = 'countries')
 #'
 #' #get all dataset metadata in TCdata360
-#' df_datasets <- get_metadata360(metadata_type = 'datasets')
+#' #df_datasets <- get_metadata360(metadata_type = 'datasets')
 
 get_metadata360 <- function(site = "tc", metadata_type = "countries") {
     # determine API base based on site parameter
