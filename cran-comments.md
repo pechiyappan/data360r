@@ -41,7 +41,7 @@ would be desirable.
 
 ## Test environments
 * local Windows install, R 3.4.2 (2017-09-28)
-* ubuntu 14.04 (on travis-ci), R 3.4.1 (2017-01-27)
+* ubuntu 14.04 (on travis-ci), R 3.4.2 (2017-01-27)
 * win-builder (R-devel)
 
 ## R CMD check results
