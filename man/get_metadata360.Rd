@@ -32,12 +32,13 @@ Hint: Want to get other data? Helpful functions include:
 }
 }
 \examples{
+##examples that take > 5 sec to run are not run for examples using "dontrun"
 #get all indicator metadata in Govdata360
-#df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")
+\dontrun{df_indicators <- get_metadata360(site="gov", metadata_type = "indicators")}
 
 #get all country metadata in TCdata360
 df_countries <- get_metadata360(metadata_type = 'countries')
 
 #get all dataset metadata in TCdata360
-#df_datasets <- get_metadata360(metadata_type = 'datasets')
+\dontrun{df_datasets <- get_metadata360(metadata_type = 'datasets')}
 }

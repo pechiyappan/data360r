@@ -22,20 +22,22 @@
 #' @export
 #' @return List containing top search results
 #' @examples
+#' ##examples that take > 5 sec to run are not run for examples using "dontrun"
 #' #search a country's code in TCdata360
-#' #search_360('Philippines', search_type = 'country')
+#' \dontrun{search_360('Philippines', search_type = 'country')}
 #'
 #' #search for top 10 relevant indicator codes in TCdata360
-#' #search_360('GDP', search_type = 'indicator', limit_results = 10)
+#' \dontrun{search_360('GDP', search_type = 'indicator', limit_results = 10)}
 #'
 #' #search for top 10 indicators of a database in TCdata360
-#' #search_360('World Development Indicators', search_type = 'indicator', limit_results = 10)
+#' \dontrun{search_360('World Development Indicators', search_type = 'indicator',
+#' limit_results = 10)}
 #'
 #' #search for top 10 indicators of a data provider in TCdata360
-#' #search_360('WEF', search_type = 'indicator', limit_results = 10)
+#' \dontrun{search_360('WEF', search_type = 'indicator', limit_results = 10)}
 #'
 #' #search for top 10 relevant categories in Govdata360
-#' #search_360('Governance', site='gov', search_type = 'category', limit_results = 10)
+#' \dontrun{search_360('Governance', site='gov', search_type = 'category', limit_results = 10)}
 
 search_360 <- function(search_string = "World Bank", site = "tc", search_type = NULL, limit_results = NULL) {
     # determine API base based on site parameter

@@ -22,6 +22,7 @@
 #' @export
 #' @return Data frame (wide) containing requested resource information
 #' @examples
+#' ##examples that take > 5 sec to run are not run for examples using "dontrun"
 #' #get all root-level categories in TCdata360
 #' df_nav <- get_resources360()
 #'
@@ -29,7 +30,7 @@
 #' df_related <- get_resources360(resource_type = 'related')
 #'
 #' #get all toolkits from Govdata360
-#' df_toolkits <- get_resources360(site='gov', resource_type = 'toolkits')
+#' \dontrun{df_toolkits <- get_resources360(site='gov', resource_type = 'toolkits')}
 
 get_resources360 <- function(site = "tc", resource_type = "nav") {
     # determine API base based on site parameter

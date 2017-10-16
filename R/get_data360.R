@@ -29,17 +29,19 @@
 #' @export
 #' @return Data frame containing requested data
 #' @examples
+#' ##examples that take > 5 sec to run are not run for examples using "dontrun"
 #' #get data for dataset ID 51 in TCdata360
-#' #df <- get_data360(dataset_id = 51)
+#' \dontrun{df <- get_data360(dataset_id = 51)}
 #'
 #' #get data for countries USA, PHL in Govdata360
-#' #df2 <- get_data360(site = 'gov', country_iso3 = c('USA', 'PHL'))
+#' \dontrun{df2 <- get_data360(site = 'gov', country_iso3 = c('USA', 'PHL'))}
 #'
 #' #get data for indicator IDs 944, 972 in TCdata360
-#' #df3 <- get_data360(indicator_id = c(944, 972))
+#' df3 <- get_data360(indicator_id = c(944, 972))
 #'
 #' #get data for indicator IDs 944, 972 in 2011-2013 in long format in TCdata360
-#' #df4 <- get_data360(indicator_id = c(944, 972), timeframes = c(2011, 2012), output_type = 'long')
+#' \dontrun{df4 <- get_data360(indicator_id = c(944, 972), timeframes = c(2011, 2012),
+#' output_type = 'long')}
 
 get_data360 <- function(site = "tc", indicator_id = NULL, dataset_id = NULL, country_iso3 = NULL, timeframes = NULL, output_type = "wide") {
 
