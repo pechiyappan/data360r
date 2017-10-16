@@ -6,7 +6,7 @@ Thanks, please write URLs in your description in the form
 <http:...> or <[https:...]https:...>
 with angle brackets for auto-linking and no space after 'http:' and 'https:'.
 
-* Done. Revised Description to <[https://tcdata360.worldbank.org/]https://tcdata360.worldbank.org/> and <[https://govdata360.worldbank.org/]https://govdata360.worldbank.org/>
+* Done. Revised Description to: <https://tcdata360.worldbank.org/> and <https://govdata360.worldbank.org/>
 
 Please do not start the description with 'This R package' or similar. 
 Perhaps just start with 'Makes it easy to ...'.
@@ -55,10 +55,11 @@ Maintainer: 'Ma. Regina Paz S. Onglao <monglao@ifc.org>'
 New submission
 
 Possibly mis-spelled words in DESCRIPTION:
-  API (11:40)
-  Govdata (3:25, 11:66)
-  TCdata (11:52)
-  metadata (13:53)
+  API (3:34, 10:78)
+  APIs (13:11)
+  Govdata (3:23, 11:26)
+  TCdata (11:12)
+  metadata (14:21, 16:61)
 
   
 This is my first submission.

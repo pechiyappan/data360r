@@ -8,8 +8,8 @@ Author: Authors@R: c(
     "World Bank Group", email = "tcdata360@worldbank.org", role = "cph"))
 Maintainer: Ma. Regina Paz S. Onglao <monglao@ifc.org>
 Description: Makes it easy to engage with the Application Program Interface (API)
-    of the TCdata360 and Govdata360 platforms at <[https://tcdata360.worldbank.org/]https://tcdata360.worldbank.org/>
-    and <[https://govdata360.worldbank.org/]https://govdata360.worldbank.org/>, respectively.
+    of the TCdata360 and Govdata360 platforms at <https://tcdata360.worldbank.org/>
+    and <https://govdata360.worldbank.org/>, respectively.
     These APIs provide access to over 5000 trade, competitiveness, and governance
     indicator data, metadata, and related information from sources
     both inside and outside the World Bank Group.

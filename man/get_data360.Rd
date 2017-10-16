@@ -54,7 +54,7 @@ Hint: Don't know what codes to write as inputs for this function? Helpful functi
 \dontrun{df2 <- get_data360(site = 'gov', country_iso3 = c('USA', 'PHL'))}
 
 #get data for indicator IDs 944, 972 in TCdata360
-df3 <- get_data360(indicator_id = c(944, 972))
+\dontrun{df3 <- get_data360(indicator_id = c(944, 972))}
 
 #get data for indicator IDs 944, 972 in 2011-2013 in long format in TCdata360
 \dontrun{df4 <- get_data360(indicator_id = c(944, 972), timeframes = c(2011, 2012),
