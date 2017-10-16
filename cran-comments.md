@@ -42,7 +42,7 @@ would be desirable.
 ## Test environments
 * local Windows install, R 3.4.2 (2017-09-28)
 * ubuntu 14.04 (on travis-ci), R 3.4.2 (2017-01-27)
-* win-builder (R-devel)
+* win-builder (R-devel (unstable) (2017-09-12 r73242))
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
