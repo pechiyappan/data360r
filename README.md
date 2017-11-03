@@ -4,10 +4,10 @@ This R package makes it easy to engage with the API of from the TCdata360 and Go
 See how it works through use cases at https://tcdata360.worldbank.org/tools/data360r, or read about its benefits in this blog: https://blogs.worldbank.org/opendata/introducing-data360r-data-power-r
 
 # Installation
-This package can be easily installed by typing this in the `R` console:
+Since [`data360r` is available in CRAN](https://cran.r-project.org/web/packages/data360r/index.html), you can be easily install `data360r` by typing this in the `R` console:
 ```r
-install.packages("devtools")
-devtools::install_github("mrpsonglao/data360r")
+install.packages("data360r")
+library(data360r)
 ```
 
 For users who are installing this package in their office work stations which use a corporate proxy or network (e.g., World Bank users), please use the following installation code instead:
