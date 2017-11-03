@@ -1,5 +1,5 @@
 # data360r
-This R package makes it easy to engage with the API of from the TCdata360 and Govdata360 platforms at tcdata360.worldbank.org and govdata360.worldbank.org, respectively. Functionalities include easier download of datasets, metadata, and related information, as well as searching based on user-inputted query.
+This R package makes it easy to engage with the API of the TCdata360 and Govdata360 platforms at [tcdata360.worldbank.org](https://tcdata360.worldbank.org) and [govdata360.worldbank.org](https://govdata360.worldbank.org), respectively. Functionalities include easier download of datasets, metadata, and related information, as well as searching based on user-inputted query.
 
 See how it works through use cases at https://tcdata360.worldbank.org/tools/data360r, or read about its benefits in this blog: https://blogs.worldbank.org/opendata/introducing-data360r-data-power-r
 
