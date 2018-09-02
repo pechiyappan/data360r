@@ -4,8 +4,8 @@
 \alias{search_360}
 \title{Search TC/Govdata360 indicators, countries, categories, and dataset lists}
 \usage{
-search_360(search_string = "World Bank", site = "tc", search_type = NULL,
-  limit_results = NULL)
+search_360(search_string = "World Bank", site = "tc",
+  search_type = NULL, limit_results = NULL)
 }
 \arguments{
 \item{search_string}{string to query in TC/Govdata360}

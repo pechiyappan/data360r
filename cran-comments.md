@@ -1,66 +1,45 @@
-## Resubmission
-This is a resubmission. In this version, the following edits were included to resolve feedback from CRAN (c/o Swetlana Herbrandt):
+## Resubmission as of Sept. 2, 2018
+This is a resubmission. In this version, the following edits were included to resolve feedback from CRAN (c/o Kurt Hornik):
 
 ### 1. For DESCRIPTION file
-Thanks, please write URLs in your description in the form
-<http:...> or <[https:...]https:...>
-with angle brackets for auto-linking and no space after 'http:' and 'https:'.
+These have 'Author' fields in DESCRIPTION which contain calls to
+person(), and hence should really be 'Authors@R' fields instead (from
+which Author and Maintainer fields can be generated).  Can you pls fix
+accordingly?
 
-* Done. Revised Description to: <https://tcdata360.worldbank.org/> and <https://govdata360.worldbank.org/>
+Offending Author fields shown below.
+...
+data360r                Authors@R: c( person("Ma. Regina Paz",
+                        "Onglao", email = "monglao@ifc.org", role =
+                        ["cre", "aut"]), person("Trade and
+                        Competitiveness Global Practice", "World Bank
+                        Group", email = "tcdata360@worldbank.org", role
+                        = "cph"))
+                        
+                        
 
-Please do not start the description with 'This R package' or similar. 
-Perhaps just start with 'Makes it easy to ...'.
-* Done. Removed "This R package" phrase at the start of Description.
+* Done. Revised "Authors" field in Description to:
 
-Please explain what kind of the data these APIs provide.
-* Done. Added this sentence in Description: "These APIs provide access to over 5000 trade, competitiveness, and governance indicator data, metadata, and related information from sources both inside and outside the World Bank Group."
+Authors@R: c(
+    person("Ma. Regina Paz S.", "Onglao", email = "monglao@ifc.org", role = c("cre", "aut")),
+    person("Trade and Competitiveness Global Practice",
+    "World Bank Group", email = "tcdata360@worldbank.org", role = "cph"))
 
-Please omit the redundant 'R' in your title.
-* Done. Revised the title to "Wrapper for TC/Govdata360 API"
-
-### 2. For R scripts in /R directory
-Please do not comment out your examples.
-Something like
-```
-\examples{
-        examples for users:
-        executable in < 5 sec
-        for checks
-        \dontshow{
-               examples for checks:
-               executable in < 5 sec together with the examples above
-               not shown to users
-        }
-        donttest{
-               further examples for users (not used for checks)
-        }
-}
-```
-would be desirable.
-* Done. Examples that take more than 5 seconds collectively to run are not run using "\dontrun{}" function for the package to pass R cmd check.
+Also deleted the separate "Maintainer" field.
 
 ## Test environments
-* local Windows install, R 3.4.2 (2017-09-28)
-* ubuntu 14.04 (on travis-ci), R 3.4.2 (2017-01-27)
-* win-builder (R-devel (unstable) (2017-09-12 r73242))
+* local Windows install, 3.5.1 (2018-07-02)
+* Ubuntu 14.04.5 LTS (on travis-ci), R 3.5.0 (2017-01-27)
+* win-builder (R-devel (unstable) (2018-08-28 r75203))
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
 
-There was 1 NOTE:
+Status: 1 NOTE
+NOTE
+Maintainer: 'Ma. Regina Paz Onglao <monglao@ifc.org>'
 
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Ma. Regina Paz S. Onglao <monglao@ifc.org>'
-
-New submission
-
-Possibly mis-spelled words in DESCRIPTION:
-  API (3:34, 10:78)
-  APIs (13:11)
-  Govdata (3:23, 11:26)
-  TCdata (11:12)
-  metadata (14:21, 16:61)
-
-  
-This is my first submission.
-These are the proper spellings of the terms used above.
+New maintainer:
+  Ma. Regina Paz Onglao <monglao@ifc.org>
+Old maintainer(s):
+  Ma. Regina Paz S. Onglao <monglao@ifc.org>
