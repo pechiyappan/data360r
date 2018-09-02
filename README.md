@@ -4,7 +4,7 @@ This R package makes it easy to engage with the API of the TCdata360 and Govdata
 See how it works through use cases at https://tcdata360.worldbank.org/tools/data360r, or read about its benefits in this blog: https://blogs.worldbank.org/opendata/introducing-data360r-data-power-r
 
 # Installation
-Since [`data360r` is available in CRAN](https://cran.r-project.org/web/packages/data360r/index.html), you can easily install `data360r` by typing this in the `R` console:
+Since [`data360r` is available in CRAN](https://cran.r-project.org/package=data360r), you can easily install `data360r` by typing this in the `R` console:
 ```r
 install.packages("data360r")
 library(data360r)
