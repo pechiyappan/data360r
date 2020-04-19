@@ -1,7 +1,38 @@
-## Resubmission as of April 19, 2020
-This is a resubmission. In this version, the following edits were included:
+## Resubmission as of April 20, 2020
+This is a resubmission. In this version, the following edits were included to resolve feedback from CRAN (c/o Uwe Ligges):
 
-### 1. For DESCRIPTION file
+### 1. Updated URIs in man/*.Rd files to include the protocol (e.g., HTTPS)
+Addressing feedback from CRAN (c/o Uwe Ligges):
+
+Found the following (possibly) invalid file URIs:
+     URI: tcdata360.worldbank.org/docs
+       From: man/get_data360.Rd
+     URI: govdata360.worldbank.org/docs
+       From: man/get_data360.Rd
+     URI: tcdata360.worldbank.org/docs
+       From: man/get_metadata360.Rd
+     URI: govdata360.worldbank.org/docs
+       From: man/get_metadata360.Rd
+     URI: tcdata360.worldbank.org/docs
+       From: man/get_resources360.Rd
+     URI: govdata360.worldbank.org/docs
+       From: man/get_resources360.Rd
+     URI: tcdata360.worldbank.org/docs
+       From: man/search_360.Rd
+     URI: govdata360.worldbank.org/docs
+       From: man/search_360.Rd
+
+Please use fully specified URLs incl the protocol, e.g. starting
+https://.....
+
+Please fix and resubmit.
+
+* FIX/ACTION DONE: Updated all violating files with the correct protocol, as follows:
+
+From: govdata360.worldbank.org/docs TO https://govdata360.worldbank.org/docs
+From: tcdata360.worldbank.org/docs TO https://tcdata360.worldbank.org/docs
+
+### 2. For DESCRIPTION file
 Updated the "Maintainer" field to my personal email, since my previous email for the Maintainer field (monglao@ifc.org) has been deprecated and changed to monglao@worldbank.org. I am using my personal email to be safe, in case the @worldbank.org email also gets deprecated in the future.
 
 * FIX/ACTION DONE: Revised "Authors" field in Description to:
@@ -12,7 +43,7 @@ Authors@R: c(
     person("Trade and Competitiveness Global Practice",
     "World Bank Group", email = "tcdata360@worldbank.org", role = "cph"))
 
-### 2. For the get_resources360.R file:
+### 3. For the get_resources360.R file:
 There was an API connection error during testing when R CMD Check was running the example:
 ```{r}
 df_related <- get_resources360(resource_type = 'related')

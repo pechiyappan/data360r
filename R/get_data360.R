@@ -1,7 +1,7 @@
 #' Get TC/Govdata360 data from API
 #'
-#' Downloads the requested data by using the TCdata360 API at \url{tcdata360.worldbank.org/docs}
-#' or Govdata360 API at \url{govdata360.worldbank.org/docs}.
+#' Downloads the requested data by using the TCdata360 API at \url{https://tcdata360.worldbank.org/docs}
+#' or Govdata360 API at \url{https://govdata360.worldbank.org/docs}.
 #' The function generates a data frame (wide or long, depending on user input).
 #'
 #' Hint: Don't know what codes to write as inputs for this function? Helpful functions include:

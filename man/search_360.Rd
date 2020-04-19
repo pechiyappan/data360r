@@ -27,8 +27,8 @@ Leaving this NULL will return all possible search results.}
 List containing top search results
 }
 \description{
-Searches using the TCdata360 API at \url{tcdata360.worldbank.org/docs}
-or Govdata360 API at \url{govdata360.worldbank.org/docs}.
+Searches using the TCdata360 API at \url{https://tcdata360.worldbank.org/docs}
+or Govdata360 API at \url{https://govdata360.worldbank.org/docs}.
 The function generates a wide dataframe containing the top search results related to the query.
 }
 \details{

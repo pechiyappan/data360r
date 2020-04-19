@@ -1,7 +1,7 @@
 #' Get TC/Govdata360 resource information from API
 #'
-#' Downloads the requested resource information by using the TCdata360 API at \url{tcdata360.worldbank.org/docs}
-#' or Govdata360 API at \url{govdata360.worldbank.org/docs}.
+#' Downloads the requested resource information by using the TCdata360 API at \url{https://tcdata360.worldbank.org/docs}
+#' or Govdata360 API at \url{https://govdata360.worldbank.org/docs}.
 #' The function generates a wide dataframe containing resource information.
 #'
 #' Hint: Want to get other data? Helpful functions include:

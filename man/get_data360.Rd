@@ -39,8 +39,8 @@ Important note: \code{timeframes} parameter cannot be non-NULL while the other p
 Data frame containing requested data
 }
 \description{
-Downloads the requested data by using the TCdata360 API at \url{tcdata360.worldbank.org/docs}
-or Govdata360 API at \url{govdata360.worldbank.org/docs}.
+Downloads the requested data by using the TCdata360 API at \url{https://tcdata360.worldbank.org/docs}
+or Govdata360 API at \url{https://govdata360.worldbank.org/docs}.
 The function generates a data frame (wide or long, depending on user input).
 }
 \details{
