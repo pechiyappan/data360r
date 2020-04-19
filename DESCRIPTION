@@ -1,9 +1,10 @@
 Package: data360r
 Type: Package
 Title: Wrapper for TC/Govdata360 API
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
-    person("Ma. Regina Paz S.", "Onglao", email = "monglao@ifc.org", role = c("cre", "aut")),
+    person("Ma. Regina Paz", "Onglao-Drilon", email = "reg@drilon.com", role = c("cre", "aut")),
+    person("Ma. Regina Paz S.", "Onglao", email = "monglao@worldbank.org", role = c("aut")),
     person("Trade and Competitiveness Global Practice",
     "World Bank Group", email = "tcdata360@worldbank.org", role = "cph"))
 Description: Makes it easy to engage with the Application Program Interface (API)
@@ -18,11 +19,11 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/mrpsonglao/data360r
-Date: 2018-09-02
+Date: 2020-04-19
 Imports:
     data.table,
     reshape2,
     jsonlite,
     utils,
     curl
-RoxygenNote: 6.1.0
+RoxygenNote: 7.1.0

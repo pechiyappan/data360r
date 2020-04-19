@@ -39,7 +39,7 @@ Hint: Want to get other data? Helpful functions include:
 df_nav <- get_resources360()
 
 #get all related resources from TCdata360
-df_related <- get_resources360(resource_type = 'related')
+#df_related <- get_resources360(resource_type = 'related')
 
 #get all toolkits from Govdata360
 \dontrun{df_toolkits <- get_resources360(site='gov', resource_type = 'toolkits')}

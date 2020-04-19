@@ -4,8 +4,14 @@
 \alias{get_data360}
 \title{Get TC/Govdata360 data from API}
 \usage{
-get_data360(site = "tc", indicator_id = NULL, dataset_id = NULL,
-  country_iso3 = NULL, timeframes = NULL, output_type = "wide")
+get_data360(
+  site = "tc",
+  indicator_id = NULL,
+  dataset_id = NULL,
+  country_iso3 = NULL,
+  timeframes = NULL,
+  output_type = "wide"
+)
 }
 \arguments{
 \item{site}{string pertaining to the data360 site to download data from.
