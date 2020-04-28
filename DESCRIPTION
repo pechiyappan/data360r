@@ -1,10 +1,10 @@
 Package: data360r
 Type: Package
 Title: Wrapper for 'TCdata360' and 'Govdata360' API
-Version: 1.0.6
+Version: 1.0.7
 Authors@R: c(
-    person("Ma. Regina Paz", "Onglao-Drilon", email = "reg@drilon.com", role = c("cre", "aut")),
-    person("World Bank Group", email = "tcdata360@worldbank.org", role = "cph"))
+    person("World Bank Group", email = "tcdata360@worldbank.org", role = c("cre","cph")),
+    person("Ma. Regina Paz", "Onglao-Drilon", email = "reg@drilon.com", role = "aut"))
 Description: Makes it easy to engage with the Application Program Interface (API)
     of the 'TCdata360' and 'Govdata360' platforms at <https://tcdata360.worldbank.org/>
     and <https://govdata360.worldbank.org/>, respectively.
