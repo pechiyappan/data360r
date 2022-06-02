@@ -16,13 +16,11 @@ Description: Makes it easy to engage with the Application Program Interface (API
     related information, as well as searching based on user-inputted query.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 URL: https://github.com/mrpsonglao/data360r
 Date: 2020-04-20
 Imports:
     data.table,
     reshape2,
     jsonlite,
-    utils,
-    curl
+    utils
 RoxygenNote: 7.1.0
