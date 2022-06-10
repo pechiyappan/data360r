@@ -43,15 +43,15 @@
 search_360 <- function(search_string = "World Bank", site = "tc", search_type = NULL, limit_results = NULL) {
     # determine API base based on site parameter
     if (site == "tc") {
-        api_base <- "http://tcdata360-backend.worldbank.org/api/v1/search?q="
+        api_base <- "https://tcdata360-backend.worldbank.org/api/v1/search?q="
     } else if (site == "gov") {
-        api_base <- "http://govdata360-backend.worldbank.org/api/v1/search?q="
+        api_base <- "https://govdata360-backend.worldbank.org/api/v1/search?q="
     } else {
         # catch errors
         stop("site parameter should only be either 'tc' or 'gov'. Please try again.")
     }
-    tc_ind <- jsonlite::fromJSON('http://tcdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
-    gov_ind <- jsonlite::fromJSON('http://govdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
+    tc_ind <- jsonlite::fromJSON('https://tcdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
+    gov_ind <- jsonlite::fromJSON('https://govdata360-backend.worldbank.org/api/v1/indicators/?fields=id%2Cname')
     df_ind <- rbind(tc_ind, gov_ind)
     df_ind <- data.table::setDT(df_ind, key="name")
     df_ind <- unique(df_ind)
