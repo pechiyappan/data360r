@@ -49,9 +49,9 @@ get_data360 <- function(site = "tc", indicator_id = NULL, dataset_id = NULL, cou
     nondate_cols <- c("Country ISO3", "Country Name", "Dataset", "dataset_id", "Indicator", "Subindicator Type", "Product", "Partner")
     # determine API base based on site parameter
     if (site == "tc") {
-        api_base <- "http://tcdata360-backend.worldbank.org/api/v1/"
+        api_base <- "https://tcdata360-backend.worldbank.org/api/v1/"
     } else if (site == "gov") {
-        api_base <- "http://govdata360-backend.worldbank.org/api/v1/"
+        api_base <- "https://govdata360-backend.worldbank.org/api/v1/"
     } else {
         # catch errors
         stop("site parameter should only be either 'tc' or 'gov'. Please try again.")
